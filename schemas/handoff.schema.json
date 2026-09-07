@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MobStack Handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "from",
+    "to",
+    "workload",
+    "sourceCommit",
+    "completed",
+    "open",
+    "prohibited",
+    "artifacts",
+    "humanOwner"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "from": {
+      "type": "string"
+    },
+    "to": {
+      "type": "string"
+    },
+    "workload": {
+      "type": "string"
+    },
+    "sourceCommit": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{7,40}$"
+    },
+    "completed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "open": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "prohibited": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "humanOwner": {
+      "type": "string"
+    }
+  }
+}

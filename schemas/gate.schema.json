@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MobStack Human Gate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "question",
+    "requiredEvidence",
+    "outcomes",
+    "decisionAuthority",
+    "receiptRequired"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "question": {
+      "type": "string"
+    },
+    "requiredEvidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "outcomes": {
+      "const": [
+        "PASS",
+        "HOLD",
+        "REDIRECT",
+        "STOP"
+      ]
+    },
+    "decisionAuthority": {
+      "type": "string",
+      "minLength": 1
+    },
+    "receiptRequired": {
+      "const": true
+    },
+    "automatedChecks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

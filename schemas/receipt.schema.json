@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MobStack Run Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "runId",
+    "startedAt",
+    "finishedAt",
+    "host",
+    "workload",
+    "sourceCommit",
+    "doctrineRefs",
+    "playbookRefs",
+    "mob",
+    "humanOwner",
+    "actions",
+    "artifacts",
+    "gates",
+    "unresolved"
+  ],
+  "properties": {
+    "runId": {
+      "type": "string"
+    },
+    "startedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "finishedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "host": {
+      "enum": [
+        "claude-code",
+        "claude-cowork",
+        "codex",
+        "google-ai-studio",
+        "other"
+      ]
+    },
+    "workload": {
+      "type": "string"
+    },
+    "sourceCommit": {
+      "type": "string"
+    },
+    "doctrineRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "playbookRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "mob": {
+      "type": "string"
+    },
+    "humanOwner": {
+      "type": "string"
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "gates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "outcome",
+          "decidedBy"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "outcome": {
+            "enum": [
+              "PASS",
+              "HOLD",
+              "REDIRECT",
+              "STOP"
+            ]
+          },
+          "decidedBy": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "unresolved": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

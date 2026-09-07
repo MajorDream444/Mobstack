@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MobStack MOB",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "mission",
+    "lead",
+    "agents",
+    "inputs",
+    "outputs",
+    "handoffRules",
+    "qualityRubric"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "mission": {
+      "type": "string"
+    },
+    "lead": {
+      "type": "string"
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "handoffRules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "qualityRubric": {
+      "type": "string"
+    }
+  }
+}

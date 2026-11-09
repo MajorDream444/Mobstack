@@ -30,7 +30,7 @@ See [VISION.md](./VISION.md), [CONSTITUTION.md](./CONSTITUTION.md), and [ARCHITE
 
 - schemas — portable contracts for agents, MOBS, skills, gates, handoffs, and receipts
 - adapters — host responsibilities and boundaries
-- workflows — approved execution sequences
+- workflows — execution sequences, including the proposed [six-document build handoff](workflows/build-handoff/README.md)
 - gates — truth, language, authority, capital, and ownership safeguards
 - examples — read-only industry workload mappings
 - tests — contract fixtures and safety cases
